@@ -11,9 +11,7 @@ include_once "partials/header.php";
     </div>
 </div><br/>
 
-<div>
-    <hr/>
-</div>
+<hr class="divider" style="border-top: 3px double #8c8b8b;">
 
 
 
