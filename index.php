@@ -13,7 +13,34 @@ include_once "partials/header.php";
 
 <hr class="divider" style="border-top: 3px double #8c8b8b;">
 
-
+<div class="container">
+    <div class="pt-4">
+        <form action="" class="row">
+            <div class="col-3 pb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><input type="checkbox" value="dvd" name="dvd1"></h5>
+                        <p class="card-text">kod123123</p>
+                        <p class="card-text">disk</p>
+                        <p class="card-text">200$</p>
+                        <p class="card-text">Size: 700 MB</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 pb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><input type="checkbox" value="dvd" name="dvd1"></h5>
+                        <p class="card-text">kod123123</p>
+                        <p class="card-text">disk</p>
+                        <p class="card-text">200$</p>
+                        <p class="card-text">Size: 700 MB</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 <?php 
 
