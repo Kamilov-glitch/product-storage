@@ -10,7 +10,7 @@ include_once "partials/header.php";
             <h2>Product Add</h2>
             <div class="d-flex flex-row justify-content-end pt-2">
                 <button class="btn btn-success pe-4 me-2" type="submit">Save</button>
-                <a href="index.php" class="btn btn-primary ms-2" role="button">Cancel</a>
+                <a href="index.php" class="btn btn-danger ms-2" role="button">Cancel</a>
             </div>
         </div><br/>
         <div class="form-group">
@@ -34,7 +34,7 @@ include_once "partials/header.php";
         </div>
         
         <div class="form-group">
-            
+            REAMINDER -- must be filled
         </div>
     </form>
 </div>
