@@ -16,7 +16,7 @@ include_once "partials/header.php";
 <div class="container">
     <div class="pt-4">
         <form action="" class="row">
-            <div class="col-3 pb-3">
+            <div class="col-4 pb-3">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"><input type="checkbox" value="dvd" name="dvd1"></h5>
@@ -27,7 +27,7 @@ include_once "partials/header.php";
                     </div>
                 </div>
             </div>
-            <div class="col-3 pb-3">
+            <div class="col-4 pb-3">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"><input type="checkbox" value="dvd" name="dvd1"></h5>
