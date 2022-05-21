@@ -5,17 +5,20 @@ include_once "Model.php";
 
 class Product implements Model {
 
-    public $sku;
-    public $name;
-    public $price;
-    public $type;
+    protected $sku;
+    protected $name;
+    protected $price;
+    protected $type;
+    protected $attr;
+
     private $db;
 
-    public function __construct($sku, $name, $price, $type) {
+    public function __construct($sku, $name, $price, $type, $attr) {
         $this->sku = $sku;
         $this->name = $name;
         $this->price = $price;
         $this->type = $type;
+        $this->attr = $attr;
         $this->db = new Database();
     }
 
