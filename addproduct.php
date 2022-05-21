@@ -17,17 +17,17 @@ include_once "partials/header.php";
         <br/>
         <div class="form-group">
             <label for="sku" class="pe-4">SKU</label>
-            <input type="text" name="sku" id="sku" class="form-control">
+            <input type="text" name="sku" id="sku" class="form-control" required>
         </div>
         
         <div class="form-group">
             <label for="name" class="pe-4">Name</label>
-            <input type="text" name="name" id="name" class="form-control">
+            <input type="text" name="name" id="name" class="form-control" required>
         </div>
         
         <div class="form-group">
             <label for="price" class="pe-4">Price($)</label>
-            <input type="text" name="price" id="price" class="form-control">
+            <input type="text" name="price" id="price" class="form-control" required>
             <select name="type" id="producType" onchange="getValue(this)">
                 <option value="dvd">DVD</option>
                 <option value="book">Book</option>

@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /myProjects/product-storage/
+RewriteRule ^router\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /myProjects/product-storage/router.php [L]
