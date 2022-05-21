@@ -1,6 +1,7 @@
 <?php
 
 include_once "Database.php";
+include_once "Model.php";
 
 class Product implements Model {
 
