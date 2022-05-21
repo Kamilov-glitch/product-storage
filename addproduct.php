@@ -4,6 +4,8 @@ include_once "partials/header.php";
 
 ?>
 
+<script src="add.js"></script>
+
 <div class="container pt-5">
     <form action="Controllers/AddProductController.php" method="POST" id="product_form">
         <div class="container">
@@ -28,18 +30,20 @@ include_once "partials/header.php";
         <div class="form-group">
             <label for="price" class="pe-4">Price($)</label>
             <input type="text" name="price" id="price" class="form-control" required>
-            <select name="type" id="producType" onchange="getValue(this)">
+            <select name="type" id="productType">
                 <option value="dvd">DVD</option>
                 <option value="book">Book</option>
                 <option value="furniture">Furniture</option>
             </select>
         </div>
         
-        <div class="form-group">
-            REAMINDER -- must be filled
+        <div class="form-group" id="dynamic">
+            
         </div>
     </form>
 </div>
+
+
 
 <?php
 
