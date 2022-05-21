@@ -5,7 +5,7 @@ include_once "partials/header.php";
 ?>
 
 <div class="container pt-5">
-    <form action="" id="product_form">
+    <form action="Controllers/AddProductController.php" method="POST" id="product_form">
         <div class="container">
             <h2>Product Add</h2>
             <div class="d-flex flex-row justify-content-end pt-2">
