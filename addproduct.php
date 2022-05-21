@@ -12,7 +12,9 @@ include_once "partials/header.php";
                 <button class="btn btn-success pe-4 me-2" type="submit">Save</button>
                 <a href="index.php" class="btn btn-danger ms-2" role="button">Cancel</a>
             </div>
-        </div><br/>
+        </div>
+        <hr>
+        <br/>
         <div class="form-group">
             <label for="sku" class="pe-4">SKU</label>
             <input type="text" name="sku" id="sku" class="form-control">
