@@ -10,6 +10,7 @@ class Product implements Model {
     protected $price;
     protected $type;
     protected $attr;
+    protected $table;
 
     private $db;
 
@@ -20,35 +21,28 @@ class Product implements Model {
         $this->type = $type;
         $this->attr = $attr;
         $this->db = new Database();
+        $this->table = 'products';
     }
 
     public function save() {
-        $table = $this->getTable();
-        $sql = "INSERT INTO $table VALUES(:sku, :name, :price)";
+        $sql = "INSERT INTO $this->table VALUES(:sku, :name, :price, :type, :attr)";
         $values = [
             [':sku', $this->sku],
             [':name', $this->name],
             [':price', $this->price],
+            [':type', $this->type],
+            [':attr', $this->type],
         ];
         $this->db->execute($sql, $values);
     }
 
     public function remove() {
-        $table = $this->getTable();
-        $sql = "DELETE FROM $table WHERE sku = :sku";
+        $sql = "DELETE FROM $this->table WHERE sku = :sku";
         $values = [
             [':sku', $this->sku],
         ];
         $this->db->execute($sql, $values);
     }
 
-    private function getTable() {
-        $tables = [
-            "dvd" => "dvds",
-            "furniture" => "furnitures",
-            "book" => "books",
-        ];
-        return $tables[$this->type];
-    }
 
 }
