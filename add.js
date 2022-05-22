@@ -18,7 +18,7 @@ $(document).ready(() => {
                 "<label for='width'>Width</label>" +
                 "<input type='text' class='form-control' name='width'>" +
                 "<label for='length'>Length</label>" +
-                "<input type='text' step='0.01' class='form-control' name='length'>"
+                "<input type='text' class='form-control' name='length'>"
             );
             break;
     }

@@ -19,4 +19,11 @@ class Database
         }
         $stmt->execute();
     }
+
+    public function getAll($sql)
+    {
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

@@ -12,7 +12,7 @@ header("Location: ../index.php");
 function getAttr($type) {
     $attrs = [
         "dvd" => $_POST['size'] . ' MB',
-        "furniture" => $_POST['height'] . "X" . $_POST['width'] . "X" . $_POST['length'],
+        "furniture" => $_POST['height'] . "x" . $_POST['width'] . "x" . $_POST['length'],
         "book" => $_POST['weight'] . "KG",
     ];
     return $attrs[$type];

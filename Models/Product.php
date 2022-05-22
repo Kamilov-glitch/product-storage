@@ -3,7 +3,8 @@
 include_once "Database.php";
 include_once "Model.php";
 
-class Product implements Model {
+class Product implements Model 
+{
 
     protected $sku;
     protected $name;
@@ -14,7 +15,8 @@ class Product implements Model {
 
     private $db;
 
-    public function __construct($sku, $name, $price, $type, $attr) {
+    public function __construct($sku, $name, $price, $type, $attr) 
+    {
         $this->sku = $sku;
         $this->name = $name;
         $this->price = $price;
@@ -24,7 +26,8 @@ class Product implements Model {
         $this->table = 'products';
     }
 
-    public function save() {
+    public function save() 
+    {
         $sql = "INSERT INTO $this->table VALUES(:sku, :name, :price, :type, :attr)";
         $values = [
             [':sku', $this->sku],
@@ -36,7 +39,8 @@ class Product implements Model {
         $this->db->execute($sql, $values);
     }
 
-    public function remove() {
+    public function remove() 
+    {
         $sql = "DELETE FROM $this->table WHERE sku = :sku";
         $values = [
             [':sku', $this->sku],
@@ -44,5 +48,10 @@ class Product implements Model {
         $this->db->execute($sql, $values);
     }
 
+    public function all() 
+    {
+        $sql = "SELECT * FROM $this->table";
+        return $this->db->getAll($sql);
+    }
 
 }

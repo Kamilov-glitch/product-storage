@@ -1,8 +1,13 @@
 <?php
 
 include_once "partials/header.php";
+include_once "Models/Product.php";
 
+$prod = new Product(0, 0, 0, 0, 0);
+$products = $prod->all();
 ?>
+
+
 
 <div class="container">
     <div class="d-flex flex-row justify-content-end pt-5">
@@ -16,6 +21,19 @@ include_once "partials/header.php";
 <div class="container">
     <div class="pt-4">
         <form action="" class="row">
+            <?php foreach ($products as $product): ?>
+                <div class="col-4 pb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><input type="checkbox" value="<?php echo $product['type'] ?>" name="<?php echo $product['sku'] ?>"></h5>
+                        <p class="card-text"><?php echo $product['sku'] ?></p>
+                        <p class="card-text"><?php echo $product['name'] ?></p>
+                        <p class="card-text"><?php echo $product['price'] ?>$</p>
+                        <p class="card-text"><?php echo $product['attr'] ?></p>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
             <div class="col-4 pb-3">
                 <div class="card">
                     <div class="card-body">
