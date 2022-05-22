@@ -31,7 +31,7 @@ class Product implements Model {
             [':name', $this->name],
             [':price', $this->price],
             [':type', $this->type],
-            [':attr', $this->type],
+            [':attr', $this->attr],
         ];
         $this->db->execute($sql, $values);
     }
