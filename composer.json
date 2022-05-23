@@ -1,0 +1,9 @@
+{
+    "name": "fuad/product-storage",
+    "description": "Test task for Scandiweb",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

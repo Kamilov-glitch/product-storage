@@ -1,6 +1,6 @@
 <?php
-// var_dump($_POST);
-include_once "../Models/Product.php";
+namespace App\Controllers;
+use App\Models\Product;
 
 $attr = getAttr($_POST['type']);
 

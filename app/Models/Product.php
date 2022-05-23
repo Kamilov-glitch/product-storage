@@ -1,7 +1,13 @@
 <?php
 
+namespace App\Models;
+
+use App\Models\Database;
+use App\Models\Model;
 include_once "Database.php";
 include_once "Model.php";
+
+
 
 class Product implements Model 
 {
