@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitb2ab49601c46ed52bdd0ae46d389ec09
 {
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Symfony\\Component\\Routing\\' => 26,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -14,6 +18,10 @@ class ComposerStaticInitb2ab49601c46ed52bdd0ae46d389ec09
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Component\\Routing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/routing',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',

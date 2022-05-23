@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\Models;
+
 class Furniture extends Product
 {
     public function __construct($sku, $name, $price, $attr)
