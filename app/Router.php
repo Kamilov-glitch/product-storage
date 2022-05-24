@@ -20,9 +20,9 @@ class Router
 
         $matcher = new UrlMatcher($routes, $context);
         try {
-            $mathcer = $matcher->match($_SERVER['REQUEST_URI']);
+            $matcher = $matcher->match($_SERVER['REQUEST_URI']);
 
-            array_walk($mathcer, function(&$param)
+            array_walk($matcher, function(&$param)
             {
                 if(is_numeric($param))
                 {
@@ -30,10 +30,10 @@ class Router
                 }
             });
 
-            $className = '\\App\\Controllers\\' . $mathcer['controller'];
+            $className = '\\App\\Controllers\\' . $matcher['controller'];
             $classInstance = new $className();
 
-            $params = array_merge(array_slice($mathcer, 2, -1), array('routes' => $routes));
+            $params = array_merge(array_slice($matcher, 2, -1), array('routes' => $routes));
 
             call_user_func_array(array($classInstance, $matcher['method']), $params);
         } catch (MethodNotAllowedException $e) {
