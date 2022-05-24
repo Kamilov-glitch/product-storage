@@ -1,12 +1,11 @@
 <?php
 
-
 define('SITE_NAME', 'scandiweb');
 
 // App Root
 define('APP_ROOT', dirname(dirname(__FILE__)));
-define('URL_ROOT', '/');
-define('URL_SUBFOLDER', '');
+define('URL_ROOT', 'http://localhost/');
+define('URL_SUBFOLDER', 'myProjects/product-storage/');
 
 // DB Params
 define('DB_HOST', 'localhost');

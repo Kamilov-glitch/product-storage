@@ -5,8 +5,15 @@ namespace App\Controllers;
 use App\Models\Product;
 use Symfony\Component\Routing\RouteCollection;
 
+
 class ProductController
 {
+
+    public function index(RouteCollection $routes)
+    {
+        require_once APP_ROOT . '/views/index.php';
+    }
+
     public function store() 
     {
         $attr = $this->getAttr($_POST['type']);

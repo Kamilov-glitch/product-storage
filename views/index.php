@@ -1,7 +1,7 @@
 <?php
 
 include_once "partials/header.php";
-include_once "Models/Product.php";
+use App\Models\Product;
 
 $prod = new Product(0, 0, 0, 0, 0);
 $products = $prod->all();
