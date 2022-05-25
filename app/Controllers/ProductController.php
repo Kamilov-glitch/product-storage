@@ -11,6 +11,7 @@ class ProductController
 
     public function index(RouteCollection $routes)
     {
+        $routeToAddProduct = $routes->get('addproduct')->getPath();
         require_once APP_ROOT . '/views/index.php';
     }
 
