@@ -9,3 +9,7 @@ $routes->add('homepage', new Route(constant('URL_SUBFOLDER') . "/", array('contr
 'method' => 'index'), array()));
 $routes->add('addproduct', new Route(constant('URL_SUBFOLDER') . "/addproduct", 
 array('controller' => 'ProductController', 'method' => 'create'), array()));
+
+
+// js route
+$routes->add('js', new Route(constant('APP_ROOT') . "/views/add.js", array(), array()));

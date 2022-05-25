@@ -4,7 +4,7 @@ include_once "partials/header.php";
 
 ?>
 
-<script src="js/add.js"></script>
+<script src="<?php echo $routeToJs ?>"></script>
 
 <div class="container pt-5">
     <form action="Controllers/ProductController.php" method="POST" id="product_form">

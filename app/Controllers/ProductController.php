@@ -15,6 +15,12 @@ class ProductController
         require_once APP_ROOT . '/views/index.php';
     }
 
+    public function create(RouteCollection $routes)
+    {
+        $routeToJs = $routes->get('js')->getPath();
+        require_once APP_ROOT . '/views/addproduct.php';
+    }
+
     public function store() 
     {
         $attr = $this->getAttr($_POST['type']);
