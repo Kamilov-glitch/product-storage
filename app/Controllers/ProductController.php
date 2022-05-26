@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Product;
 use Symfony\Component\Routing\RouteCollection;
+use Symfony\Component\HttpFoundation\Request;
 
 
 class ProductController
@@ -17,18 +18,19 @@ class ProductController
 
     public function create(RouteCollection $routes)
     {
-        $routeToJs = $routes->get('js')->getPath();
+        $routeToPostProduct = $routes->get('postproduct')->getPath();
         require_once APP_ROOT . '/views/addproduct.php';
     }
 
-    public function store() 
+    public function store(RouteCollection $routes) 
     {
         $attr = $this->getAttr($_POST['type']);
 
         $product = new Product($_POST['sku'], $_POST['name'], $_POST['price'], $_POST['type'], $attr);
         $product->save();
 
-        header("Location: ../index.php");
+        // header("Location: ../index.php");
+        require_once APP_ROOT . '/views/index.php';
     }
 
     private function getAttr($type) {

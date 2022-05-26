@@ -7,7 +7,7 @@ include_once "partials/header.php";
 <script src="../public/add.js"></script>
 
 <div class="container pt-5">
-    <form action="Controllers/ProductController.php" method="POST" id="product_form">
+    <form action="<?php echo $routeToPostProduct ?>" method="POST" id="product_form">
         <div class="container">
             <h2>Product Add</h2>
             <div class="d-flex flex-row justify-content-end pt-2">
