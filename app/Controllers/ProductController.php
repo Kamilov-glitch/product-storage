@@ -13,6 +13,7 @@ class ProductController
     public function index(RouteCollection $routes)
     {
         $routeToAddProduct = $routes->get('addproduct')->getPath();
+        $routeToDeleteProduct = $routes->get('deleteproduct')->getPath();
         require_once APP_ROOT . '/views/index.php';
     }
 
@@ -30,12 +31,25 @@ class ProductController
         $product = new Product($_POST['sku'], $_POST['name'], $_POST['price'], $_POST['type'], $attr);
         $product->save();
 
-        // header("Location: ../index.php");
         require_once APP_ROOT . '/views/index.php';
-        // $this->index($routes);
     }
 
-    private function getAttr($type) {
+    public function destroy(RouteCollection $routes)
+    {
+        $product = new Product(0, 0, 0, 0, 0);
+
+        foreach(array_values($_POST) as $sku) {
+            
+            $product->remove($sku);
+
+        }
+        
+        require_once APP_ROOT . '/views/index.php';
+
+    }
+
+    private function getAttr($type) 
+    {
         $attrs = [
             "dvd" => $_POST['size'] . ' MB',
             "furniture" => $_POST['height'] . "x" . $_POST['width'] . "x" . $_POST['length'],

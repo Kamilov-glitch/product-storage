@@ -45,11 +45,11 @@ class Product implements Model
         $this->db->execute($sql, $values);
     }
 
-    public function remove() 
+    public function remove($sku) 
     {
         $sql = "DELETE FROM $this->table WHERE sku = :sku";
         $values = [
-            [':sku', $this->sku],
+            [':sku', $sku],
         ];
         $this->db->execute($sql, $values);
     }

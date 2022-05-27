@@ -17,3 +17,11 @@ array('controller' => 'ProductController', 'method' => 'store')));
 $postRoute->setMethods(['POST']);
 
 $routes->addCollection($postRoute);
+
+// DELETE PRODUCTS ROUTE
+$deleteRoute = new RouteCollection();
+$deleteRoute->add('deleteproduct', new Route(constant('URL_SUBFOLDER') . 'deleteproduct',
+array('controller' => 'ProductController', 'method' => 'destroy')));
+$deleteRoute->setMethods(['POST']);
+
+$routes->addCollection($deleteRoute);
