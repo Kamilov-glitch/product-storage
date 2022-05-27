@@ -31,6 +31,7 @@ include_once "partials/header.php";
             <label for="price" class="pe-4">Price($)</label>
             <input type="text" name="price" id="price" class="form-control" required>
             <select name="type" id="productType">
+                <option hidden disabled selected value> -- Type Switcher -- </option>
                 <option value="dvd">DVD</option>
                 <option value="book">Book</option>
                 <option value="furniture">Furniture</option>

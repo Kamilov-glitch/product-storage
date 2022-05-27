@@ -24,6 +24,7 @@ class ProductController
 
     public function store(RouteCollection $routes) 
     {
+
         $attr = $this->getAttr($_POST['type']);
 
         $product = new Product($_POST['sku'], $_POST['name'], $_POST['price'], $_POST['type'], $attr);
@@ -31,6 +32,7 @@ class ProductController
 
         // header("Location: ../index.php");
         require_once APP_ROOT . '/views/index.php';
+        // $this->index($routes);
     }
 
     private function getAttr($type) {
