@@ -37,7 +37,7 @@ class ProductController
             exit;
         }
 
-        $attr = $this->getAttr($_POST['type']);
+        $attr = $this->getAttr();
 
         $product = new Product();
         $product->setSku($_POST['sku']);
@@ -47,8 +47,7 @@ class ProductController
         $product->setAttr($attr);
 
         $product->save();
-
-        require_once APP_ROOT . '/views/index.php';
+        $this->index($routes);
     }
 
     public function destroy(RouteCollection $routes)
@@ -61,18 +60,21 @@ class ProductController
 
         }
         
-        require_once APP_ROOT . '/views/index.php';
+        $this->index($routes);
 
     }
 
-    private function getAttr($type) 
+    private function getAttr() 
     {
-        $attrs = [
-            "dvd" => $_POST['size'] . ' MB',
-            "furniture" => $_POST['height'] . "x" . $_POST['width'] . "x" . $_POST['length'],
-            "book" => $_POST['weight'] . "KG",
-        ];
-        return $attrs[$type];
+        if (isset($_POST['size'])) {
+            $attr = $_POST['size'] . ' MB';
+        } elseif (isset($_POST['height'])) {
+            $attr = $_POST['height'] . "x" . $_POST['width'] . "x" . $_POST['length'];
+        } elseif(isset($_POST['weight'])) {
+            $attr = $_POST['weight'] ." KG";
+        }
+        
+        return $attr;
     }
 
     private function validate($post)
