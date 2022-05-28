@@ -19,24 +19,30 @@ include_once "partials/header.php";
         <br/>
         <div class="form-group">
             <label for="sku" class="pe-4">SKU</label>
-            <input type="text" name="sku" id="sku" class="form-control">
+            <input type="text" name="sku" id="sku" class="form-control" required>
             <div class="text-danger"><small><?php if(isset($errors['sku'])) echo $errors['sku'] ?></small></div>
         </div>
         
         <div class="form-group">
             <label for="name" class="pe-4">Name</label>
             <input type="text" name="name" id="name" class="form-control" required>
+            <div class="text-danger"><small><?php if(isset($errors['name'])) echo $errors['name'] ?></small></div>
         </div>
         
         <div class="form-group">
             <label for="price" class="pe-4">Price($)</label>
             <input type="text" name="price" id="price" class="form-control" required>
-            <select name="type" id="productType">
+            <div class="text-danger"><small><?php if(isset($errors['price'])) echo $errors['price'] ?></small></div>
+        </div>
+
+        <div class="form-group">
+            <select name="type" id="productType" required>
                 <option hidden disabled selected value> -- Type Switcher -- </option>
                 <option value="dvd">DVD</option>
                 <option value="book">Book</option>
                 <option value="furniture">Furniture</option>
             </select>
+            <div class="text-danger"><small><?php if(isset($errors['type'])) echo $errors['type'] ?></small></div>
         </div>
         
         <div class="form-group" id="dynamic">
