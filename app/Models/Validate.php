@@ -21,7 +21,7 @@ class Validate
 
     public function exists($sku, $table)
     {
-        $sql = "SELECT COUNT(sku) FROM $table WHERE sku = '$sku'";
+        $sql = "SELECT sku FROM $table WHERE sku = '$sku'";
         $arr = $this->db->getAll($sql);
         return !empty($arr);
     }

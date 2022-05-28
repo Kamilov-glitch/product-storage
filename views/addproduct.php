@@ -31,7 +31,7 @@ include_once "partials/header.php";
         
         <div class="form-group">
             <label for="price" class="pe-4">Price($)</label>
-            <input type="text" name="price" id="price" class="form-control" required>
+            <input type="number" step="0.01" name="price" id="price" class="form-control" required>
             <div class="text-danger"><small><?php if(isset($errors['price'])) echo $errors['price'] ?></small></div>
         </div>
 

@@ -33,7 +33,7 @@ class Validator
             $this->errors['type'] = "Type can't be left blank";
         }
         
-        /*if (!$this->validator->isBlank($post['type']) && $post['type'] == 'dvd') {
+        if (!$this->validator->isBlank($post['type']) && $post['type'] == 'dvd') {
             if ($this->validator->isBlank($post['size'])) {
                 $this->errors['size'] = "Size can't be left blank";
             }
@@ -55,12 +55,12 @@ class Validator
             if ($this->validator->isBlank($post['length'])) {
                 $this->errors['length'] = "Length can't be left blank";
             }
-        } */
+        } 
         
 
-        // if ($this->validator->exists($post['sku'], 'products')) {
-        //     $this->errors['sku'] = "SKU should be unique, this one already exists";
-        // }
+        if ($this->validator->exists($post['sku'], 'products')) {
+            $this->errors['sku'] = "SKU should be unique, this one already exists";
+        }
 
         return $this->errors;
     }
