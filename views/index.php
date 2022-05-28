@@ -14,6 +14,7 @@ $products = $prod->all();
 <div class="container">
     <div class="pt-4">
         <form action="<?php echo $routeToDeleteProduct ?>" method="POST" class="row">
+        
             <div class="container">
                 <div class="d-flex flex-row justify-content-end pt-5">
                     <a href="<?php echo $routeToAddProduct ?>" class="btn btn-success pe-4 me-2" role="button">ADD</a>
@@ -36,28 +37,7 @@ $products = $prod->all();
                 </div>
             </div>
             <?php endforeach; ?>
-            <div class="col-4 pb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><input type="checkbox" value="dvd" name="dvd1"></h5>
-                        <p class="card-text">kod123123</p>
-                        <p class="card-text">disk</p>
-                        <p class="card-text">200$</p>
-                        <p class="card-text">Size: 700 MB</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 pb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><input type="checkbox" value="dvd" name="dvd1"></h5>
-                        <p class="card-text">kod123123</p>
-                        <p class="card-text">disk</p>
-                        <p class="card-text">200$</p>
-                        <p class="card-text">Size: 700 MB</p>
-                    </div>
-                </div>
-            </div>
+            
         </form>
     </div>
 </div>
