@@ -4,7 +4,7 @@ include_once "partials/header.php";
 
 ?>
 
-<script src="../public/add.js"></script>
+<script src="/../public/add.js/"></script>
 
 <div class="container pt-5">
     <form action="<?php echo $routeToPostProduct ?>" method="POST" id="product_form">
