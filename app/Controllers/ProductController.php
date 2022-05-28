@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\Product;
+use App\Models\Validate;
+use App\Models\Validator;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -26,6 +28,14 @@ class ProductController
 
     public function store(RouteCollection $routes) 
     {
+        $errors = $this->validate($_POST);
+
+        if (!empty($errors)) {
+            $routeToIndex = $routes->get('homepage')->getPath();
+            $routeToPostProduct = $routes->get('postproduct')->getPath();
+            require_once APP_ROOT . '/views/addproduct.php';
+            exit;
+        }
 
         $attr = $this->getAttr($_POST['type']);
 
@@ -63,6 +73,12 @@ class ProductController
             "book" => $_POST['weight'] . "KG",
         ];
         return $attrs[$type];
+    }
+
+    private function validate($post)
+    {
+        $validator = new Validator();
+        return $validator->check($post);
     }
 }
 

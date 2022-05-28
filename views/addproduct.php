@@ -19,7 +19,8 @@ include_once "partials/header.php";
         <br/>
         <div class="form-group">
             <label for="sku" class="pe-4">SKU</label>
-            <input type="text" name="sku" id="sku" class="form-control" required>
+            <input type="text" name="sku" id="sku" class="form-control">
+            <div class="text-danger"><small><?php if(isset($errors['sku'])) echo $errors['sku'] ?></small></div>
         </div>
         
         <div class="form-group">
