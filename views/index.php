@@ -3,7 +3,7 @@
 include_once "partials/header.php";
 use App\Models\Product;
 
-$prod = new Product(0, 0, 0, 0, 0);
+$prod = new Product();
 $products = $prod->all();
 ?>
 
@@ -14,7 +14,7 @@ $products = $prod->all();
 <div class="container">
     <div class="pt-4">
         <form action="<?php echo $routeToDeleteProduct ?>" method="POST" class="row">
-        
+
             <div class="container">
                 <div class="d-flex flex-row justify-content-end pt-5">
                     <a href="<?php echo $routeToAddProduct ?>" class="btn btn-success pe-4 me-2" role="button">ADD</a>

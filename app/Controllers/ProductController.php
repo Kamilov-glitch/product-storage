@@ -29,7 +29,13 @@ class ProductController
 
         $attr = $this->getAttr($_POST['type']);
 
-        $product = new Product($_POST['sku'], $_POST['name'], $_POST['price'], $_POST['type'], $attr);
+        $product = new Product();
+        $product->setSku($_POST['sku']);
+        $product->setName($_POST['name']);
+        $product->setPrice($_POST['price']);
+        $product->setType($_POST['type']);
+        $product->setAttr($attr);
+
         $product->save();
 
         require_once APP_ROOT . '/views/index.php';
@@ -37,7 +43,7 @@ class ProductController
 
     public function destroy(RouteCollection $routes)
     {
-        $product = new Product(0, 0, 0, 0, 0);
+        $product = new Product();
 
         foreach(array_values($_POST) as $sku) {
             

@@ -21,16 +21,68 @@ class Product implements Model
 
     private $db;
 
-    public function __construct($sku, $name, $price, $type, $attr) 
+    public function __construct() 
     {
-        $this->sku = $sku;
-        $this->name = $name;
-        $this->price = $price;
-        $this->type = $type;
-        $this->attr = $attr;
         $this->db = new Database();
         $this->table = 'products';
     }
+
+    // SETTER FUNCTIONS
+
+    public function setSku($sku) 
+    {
+        $this->sku = $sku;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    public function setAttr($attr)
+    {
+        $this->attr = $attr;
+    }
+
+    // GETTER FUNCTIONS
+
+    public function getSku($sku) 
+    {
+        return $this->sku;
+    }
+
+    public function getName($name)
+    {
+        return $this->name;
+    }
+
+    public function getPrice($price)
+    {
+        return $this->price;
+    }
+
+    public function getType($type)
+    {
+        return $this->type;
+    }
+
+    public function getAttr($attr)
+    {
+        return $this->attr;
+    }
+
+
+    // Database related functions
 
     public function save() 
     {
