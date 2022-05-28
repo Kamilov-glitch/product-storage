@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: scandiweb
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./product_storage/:/opt/lampp/htdocs/myProjects/
+    ports:
+      - 8000:80
+  db:
+    container_name: db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_DATABASE: product_storage
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: ''
+    ports:
+      - "9906:3306"
