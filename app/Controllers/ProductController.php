@@ -40,10 +40,10 @@ class ProductController
         $attr = $this->getAttr();
 
         $product = new Product();
-        $product->setSku($_POST['sku']);
-        $product->setName($_POST['name']);
-        $product->setPrice($_POST['price']);
-        $product->setType($_POST['type']);
+        $product->setSku( htmlspecialchars($_POST['sku']) );
+        $product->setName( htmlspecialchars($_POST['name']) );
+        $product->setPrice( htmlspecialchars($_POST['price']) );
+        $product->setType( htmlspecialchars($_POST['type']) );
         $product->setAttr($attr);
 
         $product->save();
@@ -67,11 +67,13 @@ class ProductController
     private function getAttr() 
     {
         if (isset($_POST['size'])) {
-            $attr = $_POST['size'] . ' MB';
+            $attr = htmlspecialchars($_POST['size']) . ' MB';
         } elseif (isset($_POST['height'])) {
-            $attr = $_POST['height'] . "x" . $_POST['width'] . "x" . $_POST['length'];
+            $attr = htmlspecialchars($_POST['height']) . "x" . 
+            htmlspecialchars($_POST['width']) . "x" . 
+            htmlspecialchars($_POST['length']);
         } elseif(isset($_POST['weight'])) {
-            $attr = $_POST['weight'] ." KG";
+            $attr = htmlspecialchars($_POST['weight']) ." KG";
         }
         
         return $attr;

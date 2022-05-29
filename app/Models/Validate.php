@@ -25,4 +25,9 @@ class Validate
         $arr = $this->db->getAll($sql);
         return !empty($arr);
     }
+
+    public function isNumber($field)
+    {
+        return is_numeric($field);
+    }
 }
