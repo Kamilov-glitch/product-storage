@@ -9,12 +9,12 @@ add2.js is sort of backup, get rid of it at the end of project - done
 - add default field to type switcher - done
 - refactor Product model (add setters and getters, make construct with no parameters) - done
 - work on routes - currently url is acting weird - done
-
+- sanitize inputs from form fields - done
 
 - IMPORTANT - have three db tables (books, dvds, furnitures) instead of one products
 - IMPORTANT - change database class pdo parameters to constants from config
 
-- - SUPER IMPORTANT _ ACHTUNG - sanitize inputs to form fields
+
 
 
 elave olara QEYD - rut adlari ferqli olmalidirlar mutleq yoxsa databazaya save olmur!
