@@ -21,6 +21,7 @@ class Validate
 
     public function exists($sku, $table)
     {
+        $this->db = new Database();
         $sql = "SELECT sku FROM $table WHERE sku = '$sku'";
         $arr = $this->db->getAll($sql);
         return !empty($arr);

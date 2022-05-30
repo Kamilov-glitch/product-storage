@@ -104,7 +104,7 @@ class Product implements Model
 
     public function all() 
     {
-        $sql = "SELECT * FROM $this->table";
+        $sql = "SELECT * FROM $this->table ORDER BY type, name";
         return $this->db->getAll($sql);
     }
 
