@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use PDO;
+use PDOException;
 
 class Database
 {
@@ -9,9 +10,13 @@ class Database
 
     public function __construct()
     {
+        try {
         $this->pdo = new PDO("mysql:host=localhost; dbname=product_storage", "root", "");
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
     }
 
     public function execute($sql, $values)

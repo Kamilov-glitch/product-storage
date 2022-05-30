@@ -67,13 +67,13 @@ class ProductController
     private function getAttr() 
     {
         if (isset($_POST['size'])) {
-            $attr = htmlspecialchars($_POST['size']) . ' MB';
+            $attr = 'Size: ' . htmlspecialchars($_POST['size']) . ' MB';
         } elseif (isset($_POST['height'])) {
-            $attr = htmlspecialchars($_POST['height']) . "x" . 
+            $attr = 'Dimension: ' . htmlspecialchars($_POST['height']) . "x" . 
             htmlspecialchars($_POST['width']) . "x" . 
             htmlspecialchars($_POST['length']);
         } elseif(isset($_POST['weight'])) {
-            $attr = htmlspecialchars($_POST['weight']) ." KG";
+            $attr = 'Weight: ' . htmlspecialchars($_POST['weight']) ." KG";
         }
         
         return $attr;

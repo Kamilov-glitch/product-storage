@@ -38,9 +38,9 @@ include_once "partials/header.php";
         <div class="form-group">
             <select name="type" id="productType" required>
                 <option hidden disabled selected value> -- Type Switcher -- </option>
-                <option value="dvd">DVD</option>
-                <option value="book">Book</option>
-                <option value="furniture">Furniture</option>
+                <option id="DVD" value="dvd">DVD</option>
+                <option id="Book" value="book">Book</option>
+                <option id="Furniture" value="furniture">Furniture</option>
             </select>
             <div class="text-danger"><small><?php if(isset($errors['type'])) echo $errors['type'] ?></small></div>
         </div>
