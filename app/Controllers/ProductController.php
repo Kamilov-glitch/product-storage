@@ -47,7 +47,9 @@ class ProductController
         $product->setAttr($attr);
 
         $product->save();
-        $this->index($routes);
+
+        $this->headToIndex();
+        
     }
 
     public function destroy(RouteCollection $routes)
@@ -60,7 +62,7 @@ class ProductController
 
         }
         
-        $this->index($routes);
+        $this->headToIndex();
 
     }
 
@@ -83,6 +85,12 @@ class ProductController
     {
         $validator = new Validator();
         return $validator->check($post);
+    }
+
+    private function headToIndex()
+    {
+        $loc = "http://localhost/myProjects/product-storage/";
+        header("Location: $loc");
     }
 }
 

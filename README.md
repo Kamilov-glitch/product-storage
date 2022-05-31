@@ -11,10 +11,5 @@ add2.js is sort of backup, get rid of it at the end of project - done
 - work on routes - currently url is acting weird - done
 - sanitize inputs from form fields - done
 
-- IMPORTANT - have three db tables (books, dvds, furnitures) instead of one products
-- IMPORTANT - change database class pdo parameters to constants from config
-
-
-
 
 elave olara QEYD - rut adlari ferqli olmalidirlar mutleq yoxsa databazaya save olmur!
