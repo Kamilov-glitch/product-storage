@@ -28,7 +28,8 @@ $products = $prod->all();
                 <div class="col-4 pb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><input type="checkbox" class="delete-checkbox" value="<?php echo $product['sku'] ?>" name="<?php echo $product['type'] ?>"></h5>
+                        <h5 class="card-title"><input type="checkbox" class="delete-checkbox" 
+                            value="<?php echo $product['sku'] ?>" name="<?php echo $product['sku'] ?>" required></h5>
                         <p class="card-text"><?php echo $product['sku'] ?></p>
                         <p class="card-text"><?php echo $product['name'] ?></p>
                         <p class="card-text"><?php echo $product['price'] ?>$</p>
